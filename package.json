@@ -4,7 +4,6 @@
   "description": "",
   "author": "Brad Jones <brad@bjc.id.au>",
   "license": "MIT",
-  "main": "index.js",
   "dependencies": {
     "@types/deep-equal": "0.0.30",
     "@types/md5": "^2.1.31",
