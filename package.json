@@ -10,13 +10,10 @@
     "node": ">=7.0.0"
   },
   "dependencies": {
-    "@types/deep-equal": "0.0.30",
-    "@types/md5": "^2.1.31",
-    "@types/node": "^6.0.46",
-    "@types/traverse": "^0.6.28",
     "deep-equal": "^1.0.1",
     "linq-es2015": "^2.4.13",
     "md5": "^2.2.1",
+    "swagger-tools": "^0.10.1",
     "traverse": "^0.6.6",
     "ts-node": "^1.6.1",
     "typescript": "^2.0.6"
@@ -30,12 +27,17 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
+    "@types/deep-equal": "0.0.30",
+    "@types/md5": "^2.1.31",
+    "@types/node": "^6.0.46",
+    "@types/swagger-tools": "github:jzorn/typed-swagger-tools",
+    "@types/traverse": "^0.6.28",
     "cz-conventional-changelog": "^1.2.0",
     "semantic-release": "^4.3.5"
   },
   "config": {
     "commitizen": {
-      "path":"cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
   }
 }

@@ -159,4 +159,4 @@ let petstore = new OpenApiSpecBuilder
     ]
 });
 
-console.log(petstore.toJson());
+petstore.toJson().then(v => console.log(v)).catch(e => console.error(JSON.stringify(e)));

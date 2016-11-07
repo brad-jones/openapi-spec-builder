@@ -1,4 +1,5 @@
 import * as deepEqual from 'deep-equal';
+import * as swagger from 'swagger-tools';
 
 import IParameter from './v2/Strict/IParameter';
 import IReference from './v2/Strict/IReference';
@@ -16,24 +17,53 @@ export default class OpenApiSpecBuilder
      * After the spec builder has worked it's magic,
      * this property will contain a strict open api specfication.
      */
-    public strictSpec: Strictv2ISpec;
+    protected strictSpec: Strictv2ISpec;
 
-    public constructor(protected modifiedSpec: Modifiedv2ISpec)
+    /**
+     * Give us a typescript friendly version of the OpenAPI Spec
+     * and we will convert it into a Strict version 2.0 Spec Document.
+     */
+    public constructor(protected modifiedSpec: Modifiedv2ISpec) {}
+
+    /**
+     * Perform the converstion between a Modified Spec & a Strict Spec.
+     */
+    public async getStrictSpec(): Promise<Strictv2ISpec>
     {
-        this.addSwaggerVersion();
-        this.convertModifiedEndpointsToStrictPaths();
-        this.convertModifiedResponsesToStrictResponses();
-        //this.deDuplicateAndMinify();
-        this.strictSpec = <any>this.modifiedSpec;
+        return new Promise<Strictv2ISpec>((resolve, reject) =>
+        {
+            // Resolve straight away if we have already done the converstion.
+            if (this.strictSpec != null) return resolve(this.strictSpec);
+
+            // Run our converstion methods over the modified spec.
+            this.addSwaggerVersion();
+            this.convertModifiedEndpointsToStrictPaths();
+            this.convertModifiedResponsesToStrictResponses();
+            //this.deDuplicateAndMinify();
+
+            // While the typescript interfaces go along way to helping provide
+            // a valid open api specification, there are certian rules & edge
+            // cases that can only be validated at RunTime.
+            (<any>swagger.specs.v2).validate(this.modifiedSpec, (error, result) =>
+            {
+                if (error) return reject(error);
+
+                if (typeof result !== 'undefined') return reject(result);
+
+                this.strictSpec = <any>this.modifiedSpec;
+
+                resolve(this.strictSpec);
+            });
+        });
     }
 
     /**
      * Converts the strict spec to a JSON String,
      * ready to be consumed by swagger-ui or other tools.
      */
-    public toJson(): string
+    public async toJson(): Promise<string>
     {
-        return JSON.stringify(this.strictSpec);
+        return JSON.stringify(await this.getStrictSpec());
     }
 
     /**
