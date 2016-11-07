@@ -102,7 +102,7 @@ interface ISpec
      *
      * @see https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#security-requirement-object
      */
-    security?: ISecurityRequirment;
+    security?: ISecurityRequirment[];
 
     /**
      * A list of tags used by the specification with additional metadata.
