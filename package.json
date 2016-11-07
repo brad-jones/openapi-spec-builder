@@ -1,9 +1,11 @@
 {
   "name": "openapi-spec-builder",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript Interfaces and Tools to Build OpenAPI Specs.",
   "author": "Brad Jones <brad@bjc.id.au>",
   "license": "MIT",
+  "main": "./lib/OpenApiSpecBuilder.js",
+  "typings": "./lib/OpenApiSpecBuilder.d.ts",
   "dependencies": {
     "@types/deep-equal": "0.0.30",
     "@types/md5": "^2.1.31",
