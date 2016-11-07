@@ -1,0 +1,22 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+node_js:
+  - '7'
+before_install:
+  - npm i -g npm@^3.0.0
+before_script:
+  - npm prune
+# Right now we actully don't have any tests so every build will get published
+#script:
+#  - npm run test
+after_success:
+  - npm run build
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

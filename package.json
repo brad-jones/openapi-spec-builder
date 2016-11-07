@@ -1,6 +1,6 @@
 {
   "name": "openapi-spec-builder",
-  "version": "1.0.3",
+  "version": "0.0.0-semantically-release",
   "description": "TypeScript Interfaces and Tools to Build OpenAPI Specs.",
   "author": "Brad Jones <brad@bjc.id.au>",
   "license": "MIT",
@@ -20,5 +20,23 @@
     "traverse": "^0.6.6",
     "ts-node": "^1.6.1",
     "typescript": "^2.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brad-jones/openapi-spec-builder.git"
+  },
+  "scripts": {
+    "commit":"git-cz",
+    "build": "",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "devDependencies": {
+    "commitizen": "^2.8.6",
+    "cz-conventional-changelog": "^1.2.0",
+    "semantic-release": "^4.3.5"
+  },
+  "czConfig":
+  {
+    "path":"node_modules/cz-conventional-changelog"
   }
 }
