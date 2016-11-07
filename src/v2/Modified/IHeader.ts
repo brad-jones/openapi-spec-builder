@@ -6,6 +6,11 @@ import IItems from './IItems';
 interface IHeader extends IItems
 {
     /**
+     * The header name. ie: `Content-Type`.
+     */
+    name: string;
+
+    /**
      * A short description of the header.
      */
     description?: string;

@@ -40,7 +40,7 @@ interface IResponse
      *
      * @see https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#headers-object
      */
-    headers?: { [name: string]: IHeader };
+    headers?: IHeader[];
 
     /**
      * An example of the response message.

@@ -1,6 +1,7 @@
 import * as deepEqual from 'deep-equal';
 import * as swagger from 'swagger-tools';
 
+import IHeader from './v2/Strict/IHeader';
 import IParameter from './v2/Strict/IParameter';
 import IReference from './v2/Strict/IReference';
 import IResponses from './v2/Strict/IResponses';
@@ -39,6 +40,7 @@ export default class OpenApiSpecBuilder
             this.addSwaggerVersion();
             this.convertModifiedEndpointsToStrictPaths();
             this.convertModifiedResponsesToStrictResponses();
+            this.convertModifiedHeadersToStrictHeaders();
             //this.deDuplicateAndMinify();
 
             // While the typescript interfaces go along way to helping provide
@@ -124,12 +126,71 @@ export default class OpenApiSpecBuilder
                    let newResponse = Object.assign({}, response);
                    delete newResponse.statusCode;
 
+                   // Make sure we don't override a response.
+                   if (responses[key] != null)
+                   {
+                       throw new Error
+                       (
+                           'Duplicate Response Found @ paths.'+path+
+                           '.'+method+'.responses.'+key
+                       );
+                   }
+
                    // And add the response to our new list
                    responses[key] = newResponse;
                });
 
                // Overwrite the responses array with a responses object.
                operation.responses = <any>responses;
+           }
+        }
+    }
+
+    /**
+     * Replace our modfied headers array with a strict headers object.
+     */
+    protected convertModifiedHeadersToStrictHeaders()
+    {
+        for (let path in this.modifiedSpec['paths'])
+        {
+           for (let method in this.modifiedSpec['paths'][path])
+           {
+               // Grab the operation, ie: GET, POST, PUT, etc...
+               let operation = this.modifiedSpec['paths'][path][method];
+
+               // Create a new object to hold our headers,
+               // where the keys are HTTP header names.
+               for (let response in operation.responses)
+               {
+                   if (operation.responses[response].headers == null) continue;
+
+                   let headers: { [name:string]:IHeader } = {};
+
+                   operation.responses[response].headers.forEach(header =>
+                   {
+                       // Remove the header name from our modified header
+                       // object to turn it into a strict header object.
+                       let newHeader = Object.assign({}, header);
+                       delete newHeader.name;
+
+                       // Make sure we don't override a header.
+                       if (headers[header.name] != null)
+                       {
+                           throw new Error
+                           (
+                               'Duplicate Header Found @ paths.'+path+'.'+
+                               method+'.responses.'+response+'.headers.'+
+                               header.name
+                           );
+                       }
+
+                       // And add the header to our new list
+                       headers[header.name] = newHeader;
+                   });
+
+                   // Overwrite the headers array with a headers object.
+                   operation.responses[response].headers = <any>headers;
+               }
            }
         }
     }

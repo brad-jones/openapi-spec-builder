@@ -82,13 +82,13 @@ let endpoint: IEndpoint =
             statusCode: 200,
             description: 'An paged array of pets',
             headers:
-            {
-                'x-next':
+            [
                 {
+                    name: 'x-next',
                     type: 'string',
                     description: 'A link to the next page of responses'
                 }
-            },
+            ],
             schema: pets
         }
     ]
