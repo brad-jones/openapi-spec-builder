@@ -26,7 +26,7 @@
     },
     "filesGlob": [
         "./src/**/*.ts",
-        "./examples/**/*.ts"
+        "!./examples/**/*.ts"
     ],
     "files": [
         "./src/Enums.ts",
@@ -67,7 +67,6 @@
         "./src/v2/Strict/ISharedSchema.ts",
         "./src/v2/Strict/ISpec.ts",
         "./src/v2/Strict/ITag.ts",
-        "./src/v2/Strict/IXml.ts",
-        "./examples/pet-store.ts"
+        "./src/v2/Strict/IXml.ts"
     ]
 }
