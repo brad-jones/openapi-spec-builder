@@ -1,6 +1,5 @@
 import * as deepEqual from 'deep-equal';
 
-import IOperation from './v2/Modified/IOperation';
 import IParameter from './v2/Strict/IParameter';
 import IReference from './v2/Strict/IReference';
 import IResponses from './v2/Strict/IResponses';
@@ -22,6 +21,7 @@ export default class OpenApiSpecBuilder
     public constructor(protected modifiedSpec: Modifiedv2ISpec)
     {
         this.addSwaggerVersion();
+        this.convertModifiedEndpointsToStrictPaths();
         this.convertModifiedResponsesToStrictResponses();
         //this.deDuplicateAndMinify();
         this.strictSpec = <any>this.modifiedSpec;
@@ -49,17 +49,37 @@ export default class OpenApiSpecBuilder
         for (let key in spec) this.modifiedSpec[key] = spec[key];
     }
 
+    protected convertModifiedEndpointsToStrictPaths()
+    {
+        let endpoints = this.modifiedSpec.endpoints;
+        delete this.modifiedSpec.endpoints;
+        this.modifiedSpec['paths'] = {};
+
+        for (let endpoint of endpoints)
+        {
+            if (this.modifiedSpec['paths'][endpoint.path] == null)
+            {
+                this.modifiedSpec['paths'][endpoint.path] = {};
+            }
+
+            let newOperation = Object.assign({}, endpoint);
+            delete newOperation.path; delete newOperation.method;
+
+            this.modifiedSpec['paths'][endpoint.path][endpoint.method] = newOperation;
+        }
+    }
+
     /**
      * Replace our modfied responses array with a strict responses object.
      */
     protected convertModifiedResponsesToStrictResponses()
     {
-        for (let path in this.modifiedSpec.paths)
+        for (let path in this.modifiedSpec['paths'])
         {
-           for (let method in this.modifiedSpec.paths[path])
+           for (let method in this.modifiedSpec['paths'][path])
            {
                // Grab the operation, ie: GET, POST, PUT, etc...
-               let operation = <IOperation>this.modifiedSpec.paths[path][method];
+               let operation = this.modifiedSpec['paths'][path][method];
 
                // Create a new object to hold our responses,
                // where the keys are HTTP status codes.

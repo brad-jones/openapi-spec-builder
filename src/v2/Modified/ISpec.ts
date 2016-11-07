@@ -1,7 +1,7 @@
+import IEndpoint from "./IEndpoint";
 import IExternalDocs from "./IExternalDocs";
 import IInfo from "./IInfo";
 import IParameter from "./IParameter";
-import IPath from "./IPath";
 import ISchema from "./ISchema";
 import ISecurityRequirment from './ISecurityRequirment';
 import ISecuritySchema from "./ISecuritySchema";
@@ -81,7 +81,7 @@ interface ISpec
      *
      * @see https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#paths-object
      */
-    paths: { [name: string]: IPath };
+    endpoints: IEndpoint[];
 
     /**
      * Security scheme definitions that can be used across the specification.

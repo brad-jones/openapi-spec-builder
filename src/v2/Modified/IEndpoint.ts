@@ -9,8 +9,18 @@ import { Schemes } from '../../Enums';
  *
  * @see https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object
  */
-interface IOperation
+interface IEndpoint
 {
+    /**
+     * The path to the endpoint, relative to the host and basePath.
+     */
+    path: string;
+
+    /**
+     * The method the endpoint will response to.
+     */
+    method: 'get' | 'post' | 'put' | 'patch' | 'delete' | 'options';
+
     /**
      * A list of tags for API documentation control.
      *
@@ -114,4 +124,4 @@ interface IOperation
     security?: ISecurityRequirment[];
 }
 
-export default IOperation;
+export default IEndpoint;
