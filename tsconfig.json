@@ -32,15 +32,14 @@
         "./src/Enums.ts",
         "./src/OpenApiSpecBuilder.ts",
         "./src/v2/Modified/IContact.ts",
+        "./src/v2/Modified/IEndpoint.ts",
         "./src/v2/Modified/IExample.ts",
         "./src/v2/Modified/IExternalDocs.ts",
         "./src/v2/Modified/IHeader.ts",
         "./src/v2/Modified/IInfo.ts",
         "./src/v2/Modified/IItems.ts",
         "./src/v2/Modified/ILicense.ts",
-        "./src/v2/Modified/IOperation.ts",
         "./src/v2/Modified/IParameter.ts",
-        "./src/v2/Modified/IPath.ts",
         "./src/v2/Modified/IResponse.ts",
         "./src/v2/Modified/ISchema.ts",
         "./src/v2/Modified/ISecurityRequirment.ts",
@@ -68,7 +67,7 @@
         "./src/v2/Strict/ISharedSchema.ts",
         "./src/v2/Strict/ISpec.ts",
         "./src/v2/Strict/ITag.ts",
-        "./src/v2/Strict/IXml.ts"
+        "./src/v2/Strict/IXml.ts",
         "./examples/pet-store.ts"
     ]
 }
