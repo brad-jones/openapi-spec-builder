@@ -1,10 +1,10 @@
 #!/usr/bin/env ts-node
 
-import IEndpoint from '../src/v2/Modified/IEndpoint';
-import IParaemter from '../src/v2/Modified/IParameter';
-import IResponse from '../src/v2/Modified/IResponse';
-import ISchema from '../src/v2/Modified/ISchema';
-import OpenApiSpecBuilder from '../src/OpenApiSpecBuilder';
+import IEndpoint from '../../src/v2/Modified/IEndpoint';
+import IParaemter from '../../src/v2/Modified/IParameter';
+import IResponse from '../../src/v2/Modified/IResponse';
+import ISchema from '../../src/v2/Modified/ISchema';
+import OpenApiSpecBuilder from '../../src/OpenApiSpecBuilder';
 
 let pet: ISchema =
 {
