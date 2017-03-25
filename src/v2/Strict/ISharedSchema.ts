@@ -1,10 +1,10 @@
-import { Type, FormatType } from '../../Enums';
+import { FormatType, Type } from '../../Enums';
 
 interface ISharedSchema
 {
     /**
      * The type that the schema is describing.
-     * 
+     *
      * > NOTE: In some cases the type can be omitted and it will be inferred
      *         based on other properties values. However good practise would
      *         suggest the type is defined regardless.
@@ -22,26 +22,26 @@ interface ISharedSchema
 
     /**
      * Used to supply a default JSON value associated with a particular schema.
-     * 
+     *
      * > NOTE: Unlike JSON Schema this value MUST conform
      *         to the defined type for the data type.
      *
-     * @see http://json-schema.org/latest/json-schema-validation.html#anchor101. 
+     * @see http://json-schema.org/latest/json-schema-validation.html#anchor101.
      */
     default?: any;
 
     /**
      * Successful validation depends on the presence
      * and value of "exclusiveMaximum":
-     * 
+     *
      * - if "exclusiveMaximum" is not present, or has boolean value false,
      *   then the instance is valid if it is lower than, or equal to,
      *   the value of "maximum";
-     * 
+     *
      * - if "exclusiveMaximum" has boolean value true,
      *   the instance is valid if it is strictly lower
      *   than the value of "maximum".
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor17.
      */
     maximum?: number;
@@ -50,7 +50,7 @@ interface ISharedSchema
      * If "exclusiveMaximum" is present, "maximum" MUST also be present.
      * "exclusiveMaximum", if absent, may be considered as being present
      * with boolean value false.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor17.
      */
     exclusiveMaximum?: boolean;
@@ -58,15 +58,15 @@ interface ISharedSchema
     /**
      * Successful validation depends on the presence
      * and value of "exclusiveMinimum":
-     * 
+     *
      * - if "exclusiveMinimum" is not present, or has boolean value false,
      *   then the instance is valid if it is greater than, or equal to,
      *   the value of "minimum";
-     * 
+     *
      * - if "exclusiveMinimum" is present and has boolean value true,
      *   the instance is valid if it is strictly greater than the value
      *   of "minimum".
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor21
      */
     minimum?: number;
@@ -75,7 +75,7 @@ interface ISharedSchema
      * If "exclusiveMinimum" is present, "minimum" MUST also be present.
      * "exclusiveMinimum", if absent, may be considered as being present
      * with boolean value false.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor21
      */
     exclusiveMinimum?: boolean;
@@ -83,7 +83,7 @@ interface ISharedSchema
     /**
      * A string instance is valid against this keyword if its length
      * is less than, or equal to, the value of this keyword.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor26
      */
     maxLength?: number;
@@ -91,7 +91,7 @@ interface ISharedSchema
     /**
      * A string instance is valid against this keyword if its length
      * is greater than, or equal to, the value of this keyword.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor29
      */
     minLength?: number;
@@ -99,7 +99,7 @@ interface ISharedSchema
     /**
      * This string SHOULD be a valid regular expression,
      * according to the ECMA 262 regular expression dialect.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor33
      */
     pattern?: string;
@@ -107,7 +107,7 @@ interface ISharedSchema
     /**
      * An array instance is valid against "maxItems" if its size
      * is less than, or equal to, the value of this keyword.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor42
      */
     maxItems?: number;
@@ -115,7 +115,7 @@ interface ISharedSchema
     /**
      * An array instance is valid against "minItems" if its size
      * is greater than, or equal to, the value of this keyword.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor45
      */
     minItems?: number;
@@ -123,7 +123,7 @@ interface ISharedSchema
     /**
      * If it has boolean value true, the instance validates successfully
      * if all of its elements are unique.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor49
      */
     uniqueItems?: boolean;
@@ -131,7 +131,7 @@ interface ISharedSchema
     /**
      * An instance validates successfully against this keyword if its value
      * is equal to one of the elements in this keyword's array value.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor76
      */
     enum?: any[];
@@ -139,7 +139,7 @@ interface ISharedSchema
     /**
      * A numeric instance is valid against "multipleOf" if the result of the
      * division of the instance by this keyword's value is an integer.
-     * 
+     *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor14
      */
     multipleOf?: number;

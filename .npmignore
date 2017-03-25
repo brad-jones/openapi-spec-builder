@@ -1,3 +1,11 @@
 examples
 src
+tests
+.editorconfig
+.gitattributes
+.gitignore
 .node-version
+.npmignore
+.travis.yml
+tsconfig.json
+yarn.lock
