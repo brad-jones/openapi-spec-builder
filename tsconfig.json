@@ -3,70 +3,13 @@
         "target": "es6",
         "module": "commonjs",
         "moduleResolution": "node",
-        "isolatedModules": false,
+        "importHelpers": true,
         "declaration": true,
-        "noImplicitAny": false,
-        "noImplicitUseStrict": false,
         "removeComments": true,
-        "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "types": [
-            "node"
-        ],
+        "types": ["node"],
         "outDir": "lib"
     },
-    "exclude": [
-        "node_modules"
-    ],
-    "compileOnSave": false,
-    "buildOnSave": false,
-    "atom": {
-        "rewriteTsconfig": true
-    },
-    "filesGlob": [
-        "./src/**/*.ts",
-        "!./examples/**/*.ts"
-    ],
-    "files": [
-        "./src/Enums.ts",
-        "./src/OpenApiSpecBuilder.ts",
-        "./src/v2/Modified/IContact.ts",
-        "./src/v2/Modified/IEndpoint.ts",
-        "./src/v2/Modified/IExample.ts",
-        "./src/v2/Modified/IExternalDocs.ts",
-        "./src/v2/Modified/IHeader.ts",
-        "./src/v2/Modified/IInfo.ts",
-        "./src/v2/Modified/IItems.ts",
-        "./src/v2/Modified/ILicense.ts",
-        "./src/v2/Modified/IParameter.ts",
-        "./src/v2/Modified/IResponse.ts",
-        "./src/v2/Modified/ISchema.ts",
-        "./src/v2/Modified/ISecurityRequirment.ts",
-        "./src/v2/Modified/ISecuritySchema.ts",
-        "./src/v2/Modified/ISharedSchema.ts",
-        "./src/v2/Modified/ISpec.ts",
-        "./src/v2/Modified/ITag.ts",
-        "./src/v2/Modified/IXml.ts",
-        "./src/v2/Strict/IContact.ts",
-        "./src/v2/Strict/IExample.ts",
-        "./src/v2/Strict/IExternalDocs.ts",
-        "./src/v2/Strict/IHeader.ts",
-        "./src/v2/Strict/IInfo.ts",
-        "./src/v2/Strict/IItems.ts",
-        "./src/v2/Strict/ILicense.ts",
-        "./src/v2/Strict/IOperation.ts",
-        "./src/v2/Strict/IParameter.ts",
-        "./src/v2/Strict/IPath.ts",
-        "./src/v2/Strict/IReference.ts",
-        "./src/v2/Strict/IResponse.ts",
-        "./src/v2/Strict/IResponses.ts",
-        "./src/v2/Strict/ISchema.ts",
-        "./src/v2/Strict/ISecurityRequirment.ts",
-        "./src/v2/Strict/ISecuritySchema.ts",
-        "./src/v2/Strict/ISharedSchema.ts",
-        "./src/v2/Strict/ISpec.ts",
-        "./src/v2/Strict/ITag.ts",
-        "./src/v2/Strict/IXml.ts"
-    ]
+    "include": ["./src"]
 }

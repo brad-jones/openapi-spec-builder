@@ -1,22 +1,23 @@
 {
-  "name": "openapi-spec-builder",
-  "version": "0.0.0-semantically-release",
+  "name": "@brad-jones/openapi-spec-builder",
+  "version": "0.0.0-semantically-released",
   "description": "TypeScript Interfaces and Tools to Build OpenAPI Specs.",
   "author": "Brad Jones <brad@bjc.id.au>",
   "license": "MIT",
   "main": "./lib/OpenApiSpecBuilder.js",
-  "typings": "./lib/OpenApiSpecBuilder.d.ts",
+  "types": "./lib/OpenApiSpecBuilder.d.ts",
   "engines": {
     "node": ">=7.0.0"
   },
   "dependencies": {
     "deep-equal": "^1.0.1",
-    "linq-es2015": "^2.4.13",
+    "linq-es2015": "^2.4.18",
     "md5": "^2.2.1",
     "swagger-tools": "^0.10.1",
     "traverse": "^0.6.6",
-    "ts-node": "^1.6.1",
-    "typescript": "^2.0.6"
+    "ts-node": "^3.0.2",
+    "tslib": "^1.6.0",
+    "typescript": "^2.2.1"
   },
   "repository": {
     "type": "git",
@@ -27,13 +28,13 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
-    "@types/deep-equal": "0.0.30",
+    "@types/deep-equal": "^1.0.0",
     "@types/md5": "^2.1.31",
-    "@types/node": "^6.0.46",
+    "@types/node": "^7.0.11",
     "@types/swagger-tools": "github:jzorn/typed-swagger-tools",
-    "@types/traverse": "^0.6.28",
-    "cz-conventional-changelog": "^1.2.0",
-    "semantic-release": "^4.3.5"
+    "@types/traverse": "^0.6.29",
+    "cz-conventional-changelog": "^2.0.0",
+    "semantic-release": "^6.3.2"
   },
   "config": {
     "commitizen": {

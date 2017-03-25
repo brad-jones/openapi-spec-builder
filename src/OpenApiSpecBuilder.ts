@@ -1,4 +1,5 @@
-import * as deepEqual from 'deep-equal';
+import deepEqual = require('deep-equal');
+
 import * as swagger from 'swagger-tools';
 
 import IHeader from './v2/Strict/IHeader';
