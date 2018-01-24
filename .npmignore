@@ -1,11 +1,14 @@
 examples
 src
 tests
+scripts
 .editorconfig
 .gitattributes
 .gitignore
 .node-version
 .npmignore
-.travis.yml
+.circleci
+.nyc_output
 tsconfig.json
 yarn.lock
+commitlint.config.js
