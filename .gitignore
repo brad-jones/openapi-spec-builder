@@ -67,3 +67,6 @@ dist
 
 # Ignore vscode settings
 .vscode
+
+# Ignore generated test results
+test-results
