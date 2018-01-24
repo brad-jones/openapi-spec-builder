@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "importHelpers": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "target": "es6",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    }
+}
