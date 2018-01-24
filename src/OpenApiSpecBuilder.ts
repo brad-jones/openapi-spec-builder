@@ -17,7 +17,7 @@ export default class OpenApiSpecBuilder
 {
     /**
      * After the spec builder has worked it's magic,
-     * this property will contain a strict open api specfication.
+     * this property will contain a strict open api specification.
      */
     protected strictSpec: Strictv2ISpec;
 
@@ -28,16 +28,16 @@ export default class OpenApiSpecBuilder
     public constructor(protected modifiedSpec: Modifiedv2ISpec) {}
 
     /**
-     * Perform the converstion between a Modified Spec & a Strict Spec.
+     * Perform the conversion between a Modified Spec & a Strict Spec.
      */
     public async getStrictSpec(): Promise<Strictv2ISpec>
     {
         return new Promise<Strictv2ISpec>((resolve, reject) =>
         {
-            // Resolve straight away if we have already done the converstion.
+            // Resolve straight away if we have already done the conversion.
             if (this.strictSpec != null) return resolve(this.strictSpec);
 
-            // Run our converstion methods over the modified spec.
+            // Run our conversion methods over the modified spec.
             this.addSwaggerVersion();
             this.convertModifiedEndpointsToStrictPaths();
             this.convertModifiedResponsesToStrictResponses();
@@ -45,7 +45,7 @@ export default class OpenApiSpecBuilder
             //this.deDuplicateAndMinify();
 
             // While the typescript interfaces go along way to helping provide
-            // a valid open api specification, there are certian rules & edge
+            // a valid open api specification, there are certain rules & edge
             // cases that can only be validated at RunTime.
             (<any>swagger.specs.v2).validate(this.modifiedSpec, (error, result) =>
             {
@@ -70,13 +70,13 @@ export default class OpenApiSpecBuilder
     }
 
     /**
-     * Our modfied spec does not define the swagger version,
-     * it's static anyway so we automatially add it in.
+     * Our modified spec does not define the swagger version,
+     * it's static anyway so we automatically add it in.
      */
     protected addSwaggerVersion()
     {
         // Here we create a new object where the swagger key is first.
-        // It's purely a visual thing to make the final JSON output look familar.
+        // It's purely a visual thing to make the final JSON output look familiar.
         let spec = this.modifiedSpec;
         this.modifiedSpec = <any>{swagger:'2.0'};
         for (let key in spec) this.modifiedSpec[key] = spec[key];
@@ -103,7 +103,7 @@ export default class OpenApiSpecBuilder
     }
 
     /**
-     * Replace our modfied responses array with a strict responses object.
+     * Replace our modified responses array with a strict responses object.
      */
     protected convertModifiedResponsesToStrictResponses()
     {
@@ -148,7 +148,7 @@ export default class OpenApiSpecBuilder
     }
 
     /**
-     * Replace our modfied headers array with a strict headers object.
+     * Replace our modified headers array with a strict headers object.
      */
     protected convertModifiedHeadersToStrictHeaders()
     {
@@ -278,7 +278,7 @@ export default class OpenApiSpecBuilder
                     }
                     else if (value1.value['title'] != null)
                     {
-                        // Schema's have title properties but they are optional.
+                        // Schemas have title properties but they are optional.
                         key = value1.value['title'];
                     }
                     else
