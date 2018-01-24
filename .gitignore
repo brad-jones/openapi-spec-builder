@@ -64,3 +64,6 @@ typings/
 
 # Ignore built dist
 dist
+
+# Ignore vscode settings
+.vscode
