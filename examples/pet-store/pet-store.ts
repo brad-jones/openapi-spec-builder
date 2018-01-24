@@ -1,7 +1,5 @@
-#!/usr/bin/env ts-node
-
 import IEndpoint from '../../src/v2/Modified/IEndpoint';
-import IParaemter from '../../src/v2/Modified/IParameter';
+import IParameter from '../../src/v2/Modified/IParameter';
 import IResponse from '../../src/v2/Modified/IResponse';
 import ISchema from '../../src/v2/Modified/ISchema';
 import OpenApiSpecBuilder from '../../src/OpenApiSpecBuilder';
@@ -57,7 +55,7 @@ let defaultResponse: IResponse =
     }
 };
 
-let parameter: IParaemter =
+let parameter: IParameter =
 {
     name: 'limit',
     in: 'query',

@@ -3,11 +3,6 @@
         "target": "es6",
         "module": "commonjs",
         "moduleResolution": "node",
-        "declaration": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "types": ["node"],
-        "outDir": "lib"
+        "sourceMap": true
     }
 }
