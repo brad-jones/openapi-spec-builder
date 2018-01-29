@@ -1,4 +1,4 @@
-import { In, Style } from '../TypeDefs';
+import { ParameterLocation, SerializationStyle } from '../TypeDefs';
 import ISchema from './ISchema';
 import IExample from './IExample';
 import IReference from './IReference';
@@ -52,7 +52,7 @@ export default interface IParameter extends ISpecificationExtension
      *
      * __REQUIRED__
      */
-    in: In;
+    in: ParameterLocation;
 
     /**
      * A brief description of the parameter.
@@ -106,7 +106,7 @@ export default interface IParameter extends ISpecificationExtension
      *
      * TODO: Ensure the rules defined in the above link are validated at runtime.
      */
-    style?: Style;
+    style?: SerializationStyle;
 
     /**
      * When this is true, parameter values of type array or object generate

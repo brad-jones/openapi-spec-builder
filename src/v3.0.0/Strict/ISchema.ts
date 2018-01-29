@@ -1,4 +1,4 @@
-import { Type, Format } from '../TypeDefs';
+import { DataType, DataFormat } from '../TypeDefs';
 import IXml from './IXml';
 import IReference from './IReference';
 import IExternalDocs from './IExternalDocs';
@@ -254,7 +254,7 @@ export default interface ISchema extends ISpecificationExtension
      *
      * @see https://tools.ietf.org/html/draft-wright-json-schema-validation-00#section-5.21
      */
-    type?: Type;
+    type?: DataType;
 
     /**
      * This keyword's value __MUST__ be an array.
@@ -347,7 +347,7 @@ export default interface ISchema extends ISpecificationExtension
      *
      * @see https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#dataTypeFormat
      */
-    format?: string | Format;
+    format?: string | DataFormat;
 
     /**
      * The default value represents what would be assumed by the consumer of

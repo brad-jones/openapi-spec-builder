@@ -1,4 +1,4 @@
-import { Style } from '../TypeDefs';
+import { SerializationStyle } from '../TypeDefs';
 import IHeader from './IHeader';
 import IReference from './IReference';
 import ISpecificationExtension from './ISpecificationExtension';
@@ -51,7 +51,7 @@ export default interface IEncoding extends ISpecificationExtension
      * TODO: Instead of inline string literals we should
      *       create some more shared types.
      */
-    style?: Style;
+    style?: SerializationStyle;
 
     /**
      * When this is true, property values of type array or object generate

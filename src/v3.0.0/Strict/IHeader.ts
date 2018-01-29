@@ -1,4 +1,4 @@
-import { Style } from '../TypeDefs';
+import { SerializationStyle } from '../TypeDefs';
 import ISchema from './ISchema';
 import IExample from './IExample';
 import IReference from './IReference';
@@ -69,7 +69,7 @@ export default interface IHeader extends ISpecificationExtension
      *
      * TODO: Ensure the rules defined in the above link are validated at runtime.
      */
-    style?: Style;
+    style?: SerializationStyle;
 
     /**
      * When this is true, parameter values of type array or object generate
