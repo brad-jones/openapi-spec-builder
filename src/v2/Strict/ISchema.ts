@@ -112,7 +112,7 @@ interface ISchema extends ISharedSchema
      *
      * @see http://json-schema.org/latest/json-schema-validation.html#anchor57
      */
-    minProperties?: any;
+    minProperties?: number;
 
     /**
      * An object instance is valid against this keyword if its property
