@@ -1,4 +1,4 @@
-import { FormatType, Type } from '../../Enums';
+import { FormatType, Type } from '../TypeDefs';
 
 interface ISharedSchema
 {

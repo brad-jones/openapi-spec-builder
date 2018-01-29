@@ -3,7 +3,7 @@ import IParameter from './IParameter';
 import IReference from './IReference';
 import IResponses from './IResponses';
 import ISecurityRequirment from './ISecurityRequirment';
-import { Schemes } from '../../Enums';
+import { Schemes } from '../TypeDefs';
 
 /**
  * Describes a single API operation on a path.

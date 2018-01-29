@@ -2,7 +2,7 @@ import IExternalDocs from './IExternalDocs';
 import IParameter from './IParameter';
 import IResponse from './IResponse';
 import ISecurityRequirment from './ISecurityRequirment';
-import { Schemes } from '../../Enums';
+import { Schemes } from '../TypeDefs';
 
 /**
  * Describes a single API operation on a path.

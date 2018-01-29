@@ -6,7 +6,7 @@ import ISchema from "./ISchema";
 import ISecurityRequirment from './ISecurityRequirment';
 import ISecuritySchema from "./ISecuritySchema";
 import ITag from "./ITag";
-import { Schemes } from '../../Enums';
+import { Schemes } from '../TypeDefs';
 
 /**
  * This is the root document object for the API specification.

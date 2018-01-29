@@ -1,4 +1,4 @@
-import { FormatType } from '../../Enums';
+import { FormatType } from '../TypeDefs';
 import IItems from './IItems';
 import ISchema from './ISchema';
 import ISharedSchema from './ISharedSchema';

@@ -1,4 +1,7 @@
-import { FormatType, Type } from '../../Enums';
+import { FormatType, Type } from '../TypeDefs';
+
+// TODO: Alot of the links in here no longer work.
+// They should reference this document instead https://tools.ietf.org/html/draft-wright-json-schema-validation-00#section-5.3
 
 interface ISharedSchema
 {
